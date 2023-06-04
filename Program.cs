@@ -90,6 +90,14 @@ namespace HelloWorld // Use the name of your actual application
             Console.WriteLine(myInt >= mySecondInt);
             Console.WriteLine(myInt <= mySecondInt);
 
+            // AND and OR
+
+            // AND &&
+            Console.WriteLine(5 > 2 && 5 < 5); // prints False
+            
+            // OR ||
+            Console.WriteLine(5 > 2 || 5 < 5); // prints True
+
         }
     }
 }
