@@ -1,0 +1,139 @@
+﻿// See https://aka.ms/new-console-template for more information
+// Console.WriteLine("I am a computer and I have no soulll \nHello C# programmers");
+// Console.Write("This is different than Console.WriteLine");
+// Console.Write("First");
+// Console.Write("Second");
+// Console.Write("Third");
+
+// Because the main method has an argument of string[], we can access it when we use the dotnet run command
+  // dotnet run anything I want
+// Console.WriteLine(args[0]); // Output anything
+// Console.WriteLine(args[1]); // Output I
+// Console.WriteLine(args[2]); // Output want
+
+using System;
+
+namespace VariablesEtc // Use the name of your actual application
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+
+            // Sbyte type - 8 bit integer
+            sbyte mySbyte = 127; // an sbyte is a signed value. 127 is the max value an sbyte can have
+            sbyte mySecondSbyte = -128; // sbytes can also have negative value with a max of -128
+            byte myByte = 255; // A byte can be a max value of 255
+            byte mySecondByte = 0; // Cannot go below 0 
+
+            // Short type - 16 bit integer
+            short myShort = -32768; // Max negative value. This is a signed value
+            short mySecondShort = 32767; // Max positive value. This is a signed value
+            ushort myUshort = 65535; // Max value of this unsigned short
+
+            // Int type - 32 bit signed value
+            int myInt = 2147483647; // Max positive value
+            int mySecondInt = -2147483648; // Max negative value
+
+            // Usually we'll use int to make sure we have the ability to use big numbers
+
+            // Long
+            long myLong = -9223372036854775808; // Max negative
+            long mySecondLong = 9223372036854775807; // Max Positive
+
+            // Decimals
+              // Decimals get dicey if you get too small
+
+            // Float - 8 bit decimal
+            float myFloat = .751f; // You need to put an f at the end of a float!
+            float mySecondFloat = .75f; 
+
+            // Double 16-but decimal
+            double myDouble = .751d; // You don't neet to put a d at the end of a double, because decimals are, by default, assumed to be doubles
+            double mySecondDouble = .75d;
+
+            // Decimal
+            decimal myDecimal = .751m; // Decimal uses m, rather than d, weirdly? This is the type to use for best accuracy
+            decimal mySecondDecimal = .75m; 
+
+            // NOTE: Floats and Doubles are fine so long as you don't go to the 3rd digit of the number. They can't utilize the thousandth place.
+
+            // Number Test
+            Console.WriteLine(myFloat - mySecondFloat);
+            Console.WriteLine(myDouble - mySecondDouble);
+            Console.WriteLine(myDecimal - mySecondDecimal);
+
+            // Strings
+            string myString = "Hello World"; // NOTE: Use full quotes!
+            string myStringWithSymbols = "!*&@%*(&$^()*&!@(*&!@#%$)(!))"; // NOTE: Use full quotes!
+            Console.WriteLine(myString);
+            Console.WriteLine(myStringWithSymbols);
+
+            // Boolean
+            bool myBool = true; // Can only return true or false
+            Console.WriteLine(myBool);
+
+            // Arrays, Lists, and Dictionaries
+
+            // Array of Strings
+            string[] myGroceryArray = new string[2]; // This can hold 2 items, but the indeces are 0 and 1
+            myGroceryArray[0] = "eggs";
+            myGroceryArray[1] = "milk";
+            // myGroceryArray[2] = "bread"; // This does not work, because the array isn't big enough!
+
+            Console.WriteLine(myGroceryArray[0]);
+            Console.WriteLine(myGroceryArray[1]);
+            // Console.WriteLine(myGroceryArray[2]);
+
+            // Declare an array and give it values at the same time
+            string[] mySecondGroceryArray = {"Apples", "Pears", "Oranges", "Dog Buscuits" }; // C# uses curly bracers for arrays? Hates
+            Console.WriteLine(mySecondGroceryArray[0]);
+            Console.WriteLine(mySecondGroceryArray[1]);
+            Console.WriteLine(mySecondGroceryArray[2]);
+            Console.WriteLine(mySecondGroceryArray[3]);
+
+            // Lists
+            // Lists can be dynamically increased in size - you don't have to set an array length or add items when you declare the list
+            List<string> myGroceryList = new List<string>() {"Milk", "Cheese"};
+            Console.WriteLine(myGroceryList[0]);
+            Console.WriteLine(myGroceryList[1]);
+
+            myGroceryList.Add("Cream Cheese");
+            Console.WriteLine(myGroceryList[2]);
+
+            // IEnumerable
+            // Similar to a list, but faster to use if you want to loop through all of the indeces.
+            IEnumerable<string> myGroceryIEnumerable = myGroceryList; // can't simply create one and assign values. Need to start from somewhere
+            // IEnumerables cannot be accessed at an index - it's not an indexible collection, but you can see specific values
+            Console.WriteLine(myGroceryIEnumerable.First());
+
+            // Two Dimensional Array
+            string[,] my2DArray = new string[,] {
+              {"Milk", "Cheese"},
+              {"Apples", "Oranges"}
+            };
+
+            Console.WriteLine(my2DArray[0,0]);
+            Console.WriteLine(my2DArray[0,1]);
+            Console.WriteLine(my2DArray[1,0]);
+            Console.WriteLine(my2DArray[1,1]);
+
+            // Dictionaries
+            // Dictionaries are key/value pairs
+            Dictionary<string, string> myGroceryDictionary = new Dictionary<string, string>() {
+              {"Cheese", "Dairy"},
+              {"Milk", "Dairy"},
+              {"Beef", "Butcher"},
+            };
+            Console.WriteLine(myGroceryDictionary["Beef"]);
+
+            // Adding arrays to the value of a key/value pair
+            Dictionary<string, string[]> myGroceryDepartmentDictionary = new Dictionary<string, string[]>() {
+              {"Dairy", new string[]{"Milk", "Eggs", "Cheese"}},
+              {"Meats", new string[]{"Beef", "Chicken", "Pork"}}
+            };
+            Console.WriteLine(myGroceryDepartmentDictionary["Dairy"][2]);
+        }
+    }
+}
