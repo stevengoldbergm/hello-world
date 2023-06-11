@@ -28,7 +28,11 @@ namespace HelloWorld // Use the name of your actual application
           {
             Console.WriteLine("The Strings matched!");
           } 
-          if (myCow != myCapitalizedCow)
+          // if (myCow != myCapitalizedCow)
+          // {
+          //   Console.WriteLine("The Strings didn't match!");
+          // }
+          else
           {
             Console.WriteLine("The Strings didn't match!");
           }
