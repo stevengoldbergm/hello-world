@@ -31,7 +31,11 @@ namespace HelloWorld // Use the name of your actual application
           // if (myCow != myCapitalizedCow)
           // {
           //   Console.WriteLine("The Strings didn't match!");
-          // }
+          // } We don't need this block! We should use ELSE
+          else if (myCow == myCapitalizedCow.ToLower())
+          {
+            Console.WriteLine("The letters are the same, but the capitalization is off!");
+          }
           else
           {
             Console.WriteLine("The Strings didn't match!");
