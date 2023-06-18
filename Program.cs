@@ -22,7 +22,7 @@ namespace HelloWorld // Use the name of your actual application
           Console.WriteLine(myInt + resultString);
 
           string myCow = "cow";
-          string myCapitalizedCow = "Cow";
+          string myCapitalizedCow = "cow";
 
           if (myCow == myCapitalizedCow)
           {
@@ -40,6 +40,9 @@ namespace HelloWorld // Use the name of your actual application
           {
             Console.WriteLine("The Strings didn't match!");
           }
+
+          // Switches - MUST USE CONSTANTS!
+          //  This minor edit is intended to keep my streak going on github. It's so disheartening that I can't even get a call.
 
         }
     }
