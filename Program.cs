@@ -22,7 +22,7 @@ namespace HelloWorld // Use the name of your actual application
           Console.WriteLine(myInt + resultString);
 
           string myCow = "cow";
-          string myCapitalizedCow = "Cows";
+          string myCapitalizedCow = "Cow";
 
           if (myCow == myCapitalizedCow)
           {
